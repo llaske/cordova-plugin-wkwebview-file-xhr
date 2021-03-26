@@ -1223,6 +1223,12 @@
     if ("GET" !== this._context.method && "HEAD" !== this._context.method)
       this._context.requestData = data;
 
+    if (this._context.url.indexOf("file://") != 0 && this._context.url.indexOf("http") != 0) {
+      var is = window.location.href.indexOf("Sugarizer.app/www/");
+      var ie = window.location.href.lastIndexOf("/");
+      var newUrl = window.location.href.substring(is+18, ie)+"/"+this._context.url;
+      this._context.url = newUrl;
+    }
     HandlerFactory.getHandler(this._context).then(function (handler)
     {
       handler.send();

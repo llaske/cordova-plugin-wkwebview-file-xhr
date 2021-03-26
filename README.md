@@ -1,5 +1,12 @@
 # cordova-plugin-wkwebview-file-xhr 3.0.0
 
+## About Sugarizer update 
+
+`XmlHttpRequest` look file from path relative to `Sugarizer.app/www/`. That's correct when request are launched 
+from a JavaScript file run from `index.html` but it's incorrect when launched from a subdirectory (in an activities).
+This patch use the current location as current path.
+
+
 ## About the cordova-plugin-wkwebview-file-xhr
 
 This plugin makes it possible to reap the performance benefits of using the WKWebView in your Cordova app by resolving the following issues:
