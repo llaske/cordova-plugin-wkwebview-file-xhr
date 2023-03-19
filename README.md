@@ -2,9 +2,13 @@
 
 ## About Sugarizer update 
 
-`XmlHttpRequest` look file from path relative to `Sugarizer.app/www/`. That's correct when request are launched 
+This plugin has been adapted for Sugarizer. Following is the list of updates:
+
+* `XmlHttpRequest` look file from path relative to `Sugarizer.app/www/`. That's correct when request are launched 
 from a JavaScript file run from `index.html` but it's incorrect when launched from a subdirectory (in an activities).
 This patch use the current location as current path.
+
+* On iOS 13+, force mobile mode for the WkWebView.
 
 
 ## About the cordova-plugin-wkwebview-file-xhr

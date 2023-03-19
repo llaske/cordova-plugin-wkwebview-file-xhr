@@ -109,6 +109,9 @@ NS_ASSUME_NONNULL_BEGIN
         [sessionConfiguration setRequestCachePolicy:NSURLRequestReloadIgnoringCacheData];
         self.urlSession = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil]; // FortityFalsePositive
         [wkWebView.configuration.userContentController addScriptMessageHandler:self name:@"nativeXHR"];
+        if (@available(iOS 13.0, *)) {
+            wkWebView.configuration.defaultWebpagePreferences.preferredContentMode = WKContentModeMobile;
+        }
 
     }
 }
